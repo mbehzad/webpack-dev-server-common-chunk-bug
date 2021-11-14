@@ -10,7 +10,7 @@ Entrypoint b = common.js b.bundle.js
 Entrypoint c = c.bundle.js
 ```
 
-When instead of webpack-cli, webpack-dev-server is used with the same webpack config and code, the output `c.bundle.js` needs the `common.js` chunk to run.
+When instead of webpack-cli, webpack-dev-server (or `webpack serve` command) is used with the same webpack config and code, the output `c.bundle.js` needs the `common.js` chunk to run.
 
 cmd output:
 
@@ -27,10 +27,10 @@ In c.bundle.js:
 /******/ 	deferredModules.push([2,"common"]);
 ```
 
-# Steps to reproduce
+## Steps to reproduce
 
 `npm install`,
 
 Run `npm run build` to generate bundles with webpack-cli in the dist folder.
 
-Run `npm start` and open http://localhost:9000/ to see the webpack-dev-server output and compare.
+Run `npm run serve` and open http://localhost:9000/ to see the `webpack serve` output and compare.
